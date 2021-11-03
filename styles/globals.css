@@ -7,6 +7,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Gill Sans';
   src: url('../public/fonts/GillSans/GillSans.ttf') format('ttf');
@@ -14,6 +15,25 @@
   font-display: swap;
 }
 
+:root{
+  
+  /* Colors: */
+  --primarySalmon: #FFDAC9;
+  --charcoal: #333333;
+  --lightGrey: #767676;
+
+   /* Spacing: */
+  --letter-spacing-0: 0px;
+  --letter-spacing-0-13: 0.13px;
+  --letter-spacing-0-15: 0.15px;
+  --letter-spacing-0-14: 0.14px;
+  --letter-spacing-0-18: 0.18px;
+  --letter-spacing-0-44: 0.44px;
+  --line-spacing-20: 20px;
+  --line-spacing-25: 25px;
+  --line-spacing-42: 42px;
+  --line-spacing-52: 52px;
+}
 
 html,
 body {
