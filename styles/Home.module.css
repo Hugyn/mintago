@@ -3,7 +3,7 @@
   height: 100vh;
   background: url(/homeBackground.png) var(--primarySalmon);
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -34,4 +34,9 @@
 .homeHero h3{
   margin: 0;
   font-size:35px;
+}
+
+.logoStamp{
+  position: absolute;
+  transform: translateX(-200%) translateY(100%);
 }

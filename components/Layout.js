@@ -3,6 +3,8 @@ import Head from 'next/head'
 
 //Components
 import Navbar from '../components/navbar'
+import SideNavigation from './sideNavigation';
+
 
 function Layout({children}) {
     return (
@@ -13,7 +15,9 @@ function Layout({children}) {
             </Head>
 
             <Navbar/>
-            
+
+            <SideNavigation/>
+
             {children}
         </div>
     )
