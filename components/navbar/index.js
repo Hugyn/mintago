@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from './Navbar.module.css'
 
 
-const navLinks = ["About", "community", "Location", "Our Menu", "Recipes"]
+const navLinks = ["about", "community", "location", "our menu", "recipes"]
 
 function Navbar() {
 

@@ -7,15 +7,14 @@ import SideNavigation from './sideNavigation';
 
 
 function Layout({children}) {
+    
     return (
         <div>
             <Head>
               <title>THE BEST FOODIE EXPERIENCE</title>
               <meta name="description" content="THE BEST FOODIE EXPERIENCE NOW IN LONDON"/>
             </Head>
-
             <Navbar/>
-
             <SideNavigation/>
 
             {children}
