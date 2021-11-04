@@ -6,7 +6,7 @@ import Navbar from '../components/navbar'
 import SideNavigation from './sideNavigation';
 
 
-function Layout({children}) {
+function Layout({children, pageIndex}) {
     
     return (
         <div>
@@ -15,7 +15,7 @@ function Layout({children}) {
               <meta name="description" content="THE BEST FOODIE EXPERIENCE NOW IN LONDON"/>
             </Head>
             <Navbar/>
-            <SideNavigation/>
+            <SideNavigation pageIndex={pageIndex}/>
 
             {children}
         </div>

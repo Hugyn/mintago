@@ -1,4 +1,4 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import '../styles/globals.css';
 
 //Layout Component
@@ -12,24 +12,25 @@ import Home from './Home';
 import Community from './Community';
 import Location from './Location';
 
-function MyApp() {
-  
-  return (
-    <Layout>
-      <Home/>
-      <Community />
 
-      <InView>
-        {({inView, ref, entry})=> {
-          inView && console.log("on")
-          return (
-            <section ref={ref}>
-              <Location />
-              <h1>{`in view ${inView}`}</h1>
-            </section>
-          )
-        }}
-      </InView>
+const _components = [<Home/>, <Community />, <Location />] 
+
+function MyApp() {
+  const [pageIndex ,setPageIndex] = useState(null)
+  return (
+    <Layout pageIndex={pageIndex}>
+      {_components.map((Component, _i)=> (
+          <InView key={_i} threshold={0.75}>
+            {({inView, ref, entry})=> {
+              inView && setPageIndex(Component.type.name)
+              return(
+                <section id={Component.type.name.toLowerCase()} ref={ref}>
+                  {Component}
+                </section>
+              )
+            }}
+          </InView>
+      ))} 
     </Layout>
   )
 }
