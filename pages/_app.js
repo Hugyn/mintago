@@ -17,14 +17,15 @@ const _components = [<Home/>, <Community />, <Location />]
 
 function MyApp() {
   const [pageIndex ,setPageIndex] = useState(null)
+  
   return (
-    <Layout pageIndex={pageIndex}>
+    <Layout  pageIndex={pageIndex}>
       {_components.map((Component, _i)=> (
           <InView key={_i} threshold={0.75}>
             {({inView, ref, entry})=> {
-              inView && setPageIndex(Component.type.name)
+              inView && setPageIndex(_i++)
               return(
-                <section id={Component.type.name.toLowerCase()} ref={ref}>
+                <section id={Component.type.name.toLowerCase()}  ref={ref}>
                   {Component}
                 </section>
               )

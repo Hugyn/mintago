@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 
 //Components
@@ -7,6 +7,11 @@ import SideNavigation from './sideNavigation';
 
 
 function Layout({children, pageIndex}) {
+    const [sectionCount, setSectionCount] = useState(null)
+
+    useEffect(()=> {
+        setSectionCount(()=> Object.keys(children).length)
+    },[])
     
     return (
         <div>
@@ -15,9 +20,10 @@ function Layout({children, pageIndex}) {
               <meta name="description" content="THE BEST FOODIE EXPERIENCE NOW IN LONDON"/>
             </Head>
             <Navbar/>
-            <SideNavigation pageIndex={pageIndex}/>
+            <SideNavigation sectionCount={sectionCount} pageIndex={pageIndex}/>
 
             {children}
+
         </div>
     )
 }
