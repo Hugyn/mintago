@@ -10,7 +10,7 @@ import styles from "./SideNavigation.module.css"
 function SideNavigation(props) {
     const sideNavRef = useRef()
     const currentSection = props.pageIndex; 
-    const sectionCount = props.sectionCount;
+    const sectionCount = props.sectionCount
     const currentSectionZero = currentSection-1;
   
 
@@ -18,9 +18,9 @@ function SideNavigation(props) {
     return(
         <div ref={sideNavRef} className={styles.sideNavigationContainer}>
             <span 
-            style={{top:`${40*currentSectionZero}px`}} 
+            style={{top:`${30*currentSectionZero}px`}} 
             className={styles.pageIndexNumber}>
-                {currentSection}
+                0{currentSection}
             </span>
 
             {[...Array(sectionCount)].map((el, _i)=> (

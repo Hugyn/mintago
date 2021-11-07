@@ -21,7 +21,7 @@ function Layout({children, pageIndex}) {
             </Head>
             <Navbar/>
             <SideNavigation sectionCount={sectionCount} pageIndex={pageIndex}/>
-
+            
             {children}
 
         </div>

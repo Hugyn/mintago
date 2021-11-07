@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {Component, useRef, useState} from 'react'
 import '../styles/globals.css';
 
 //Layout Component
@@ -13,16 +13,23 @@ import Community from './Community';
 import Location from './Location';
 
 
-const _components = [<Home/>, <Community />, <Location />] 
+
 
 function MyApp() {
-  const [pageIndex ,setPageIndex] = useState(null)
+  const [pageIndex ,setPageIndex] = useState(null);
+  const [isInView, setIsInView] = useState(false);
+
+  const _components = [<Home/>, <Community isInView={isInView}/>, <Location />] 
   
   return (
     <Layout  pageIndex={pageIndex}>
-      {_components.map((Component, _i)=> (
+      {_components.map((Component, _i)=> {
+        return(
           <InView key={_i} threshold={0.75}>
             {({inView, ref, entry})=> {
+              ///Community section animation
+              inView && Component.type.name == "Community" ? setIsInView(true) : null
+              
               inView && setPageIndex(_i++)
               return(
                 <section id={Component.type.name.toLowerCase()}  ref={ref}>
@@ -31,7 +38,7 @@ function MyApp() {
               )
             }}
           </InView>
-      ))} 
+      )})} 
     </Layout>
   )
 }
