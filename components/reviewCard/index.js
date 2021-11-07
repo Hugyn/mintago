@@ -10,9 +10,7 @@ function ReviewCard(props) {
 
       
     return (
-        <motion.div  key={props.key} id={props.id} className={`${styles.reviewCardContainer} ${props.className}`}
-        transition={{ duration: 2 }}
-        >
+        <div  key={props.key} id={props.id} className={`${styles.reviewCardContainer} ${props.className}`}>
             <div className={styles.cardImageContainer}>
                 {/* Reviews Photo Container */}
                 <div className={styles.cardImage} style={{backgroundImage:`url(${props.image})`}}></div>
@@ -41,7 +39,7 @@ function ReviewCard(props) {
             ) : props.detailCrosses == "small" ? (
                 <img className={styles.detailsCrossSmall} src='/icons/detail03.png' width={134} height={98}/>
             ) : null}
-        </motion.div>
+        </div>
     )
 }
 

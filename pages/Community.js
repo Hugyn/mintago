@@ -2,7 +2,7 @@ import React, {useState, useEffect, Fragment} from 'react'
 // styles
 import styles from "../styles/Community.module.css"
 
-import { motion } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 
 // components
 import Container from '../components/container';
@@ -10,7 +10,11 @@ import ReviewCard from '../components/reviewCard';
 
 function Community(props) {
     const [reviews, setReviews] = useState(null);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const [animate, setAnimate] = useState(false);
+    const control = useAnimation();
+
+
     useEffect(()=> {
         setLoading(true)
 
@@ -27,12 +31,25 @@ function Community(props) {
         .catch((error)=> {
             console.log(error)
         })
-        
     },[])
 
-   
-   
-    props.isInView ? console.log("inView") : null
+    const myVariant = {
+        hidden: {
+            opacity:0,
+             y: 500
+        },
+        visible:{
+            opacity: 1,
+            y:0
+        },
+    }
+    
+    // Start animation when component is in viewport
+    props.isInView && control.start({
+        y:0,
+        opacity: 1
+    })
+    
     return (
         <Fragment>
             <Container>
@@ -44,24 +61,29 @@ function Community(props) {
                     </div>
                 </div>
 
-                <motion.div className={styles.reviewsContainer}>
-                    { reviews && reviews.map((review)=> (
-                        <ReviewCard 
-                            startAnimation={props.isInView}
-                            className={styles.reviewCard}
+                <div className={styles.reviewsContainer}>
+                    { reviews && reviews.map((review, i)=> (
+                        <motion.div className={styles.reviewCard}
                             key={review.id}
-                            id={review.id}
-                            image="/images/Image_52.png" 
-                            title={review.title}
-                            cardContent={review.content}
-                            commentsCount={review.commentsCount}
-                            likesCount={parseInt(review.likesCount)}
-                            detailCrosses="large"
-                            detailStripes="true"
-                        />
+                            variants={myVariant}
+                            initial='hidden'
+                            animate={control}
+                            transition={{delay:i * 0.3, duration:1.5, stiffness:300}}
+                        >
+                            <ReviewCard 
+                                startAnimation={props.isInView}
+                                id={review.id}
+                                image="/images/Image_52.png" 
+                                title={review.title}
+                                cardContent={review.content}
+                                commentsCount={review.commentsCount}
+                                likesCount={parseInt(review.likesCount)}
+                                detailCrosses="large"
+                                detailStripes="true"
+                            />
+                        </motion.div>
                     ))}
-                    
-                </motion.div>
+                </div>
             </Container>
         </Fragment>
     )

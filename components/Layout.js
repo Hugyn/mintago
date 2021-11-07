@@ -13,6 +13,7 @@ function Layout({children, pageIndex}) {
         setSectionCount(()=> Object.keys(children).length)
     },[])
     
+    
     return (
         <div>
             <Head>
