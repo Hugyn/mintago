@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 //Components
 import Navbar from '../components/navbar'
+import Footer from './Footer'
 
 
 
@@ -16,6 +17,7 @@ function Layout({children, pageIndex}) {
             </Head>
             <Navbar/>
              {children}
+             <Footer/>
         </Fragment>
     )
 }

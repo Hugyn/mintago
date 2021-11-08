@@ -1,0 +1,15 @@
+.topFooter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.title{
+    font-size: 35px;
+    margin: 0;
+    color: var(--charcoal);
+}
+
+.withUs{
+    margin-top: 0;
+    font-size: 62px;
+}

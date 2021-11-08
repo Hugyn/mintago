@@ -41,9 +41,9 @@ body {
   margin: 0;
   font-family:"DIN Condensed", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  
   letter-spacing: 1px;
 }
+
 
 a {
   color: inherit;
@@ -54,3 +54,6 @@ a {
   box-sizing: border-box;
 }
 
+#community{
+  background-color: white;
+}

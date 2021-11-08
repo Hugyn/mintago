@@ -1,4 +1,7 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
+
+import { ParallaxProvider, Parallax} from 'react-scroll-parallax';
+
 
 import Container from './container';
 import styles from '../styles/Menu.module.css'
@@ -54,16 +57,44 @@ const menu = {
         }
     }
 }
-    
-
-
 
 function Menu() {
+    const [paralax, setParallax] = useState("")
+    useEffect(() => {
+       setParallax([[100, -60], [-60, 100], [100, -60],[-60, 100]]);
+    }, [])
+
+    
     return (
        <Container>
-           <div className={styles.titleContainer}>
-               <h1 className={styles.title}>OUR MENU</h1>
-               <p className={styles.knowMore}>KNOW MORE</p>
+           <div className={styles.menu}>
+                <div className={styles.titleContainer}>
+                    <h1 className={styles.title}>OUR MENU</h1>
+                    <p className={styles.knowMore}>KNOW MORE</p>
+                </div>
+            
+                <div className={styles.menuContainer}>
+                     {Object.keys(menu).map((item, _i)=> {
+                         return(
+                               <div key={_i} id={item} className={styles.menuSection}>
+                                   <ParallaxProvider>
+                                       <Parallax y={paralax[_i]}>
+                                           <h1 className={styles.menuSectionTitle}>{item.replace("_", " ")}</h1>
+                                           {Object.keys(menu[item]).map((meal)=> {
+                                               return(
+                                                   <div className={styles.menuItem}>
+                                                       <h3 className={styles.mealName}>{meal.replace("_", " ")}</h3>
+                                                       <p className={styles.mealDescription}>{menu[item][meal].description}</p>
+                                                       <span className={styles.mealPrice}>{menu[item][meal].price}</span>
+                                                   </div>
+                                               )
+                                           })}
+                                       </Parallax>
+                                   </ParallaxProvider>
+                               </div>
+                         )
+                     })}
+                </div>
            </div>
        </Container>
     )

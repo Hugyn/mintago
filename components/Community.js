@@ -15,22 +15,7 @@ export default function Community(props) {
 
 
     useEffect(()=> {
-        console.log(props)
-        setLoading(true)
-        fetch("api/reviews")
-        .then(async res => {
-            if(res.status == 200){
-                const data = await res.json();
-                setReviews(()=> data.default)
-                setLoading(false)
-            } else {
-                throw new Error('error fetching data')
-            }
-        })
-        .catch((error)=> {
-            console.log(error)
-        })
-        
+       setReviews(()=> props.reviewsData)
     },[])
 
     
@@ -63,10 +48,8 @@ export default function Community(props) {
                 </div>
 
                 <div className={styles.reviewsContainer}>
-                    {/* {loading ? 
-                        <div>Loading...</div> 
-                    : 
-                    (
+                   
+                    {
                         reviews && reviews.map((review, i)=> (
                             <motion.div className={styles.reviewCard}
                                 key={review.id}
@@ -88,8 +71,8 @@ export default function Community(props) {
                                 />
                             </motion.div>
                         ))
-                    )
-                    } */}
+                    }
+                   
                 </div>
             </Container>
         </Fragment>
