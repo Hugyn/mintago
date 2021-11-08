@@ -5,18 +5,18 @@ import styles from "../styles/Community.module.css"
 import { motion, useAnimation } from "framer-motion"
 
 // components
-import Container from '../components/container';
-import ReviewCard from '../components/reviewCard'; 
+import Container from './container';
+import ReviewCard from './reviewCard'; 
 
-function Community(props) {
+export default function Community(props) {
     const [reviews, setReviews] = useState(null);
     const [loading, setLoading] = useState(true);
     const control = useAnimation();
 
 
     useEffect(()=> {
+        console.log(props)
         setLoading(true)
-
         fetch("api/reviews")
         .then(async res => {
             if(res.status == 200){
@@ -30,8 +30,10 @@ function Community(props) {
         .catch((error)=> {
             console.log(error)
         })
+        
     },[])
 
+    
     const myVariant = {
         hidden: {
             opacity:0,
@@ -48,7 +50,7 @@ function Community(props) {
         y:0,
         opacity: 1
     })
-    
+
     return (
         <Fragment>
             <Container>
@@ -61,8 +63,8 @@ function Community(props) {
                 </div>
 
                 <div className={styles.reviewsContainer}>
-                    {loading ? 
-                        <div></div> 
+                    {/* {loading ? 
+                        <div>Loading...</div> 
                     : 
                     (
                         reviews && reviews.map((review, i)=> (
@@ -87,12 +89,20 @@ function Community(props) {
                             </motion.div>
                         ))
                     )
-                    }
-       
+                    } */}
                 </div>
             </Container>
         </Fragment>
     )
 }
 
-export default Community;
+export async function getServerSideProps(context) {
+    // const response = await fetch("http://localhost:3000/api/reviews")
+    // const data = await response.json()
+    
+    return {
+        props:{
+            "data":"data"
+    }
+}
+}

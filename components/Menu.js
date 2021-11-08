@@ -1,17 +1,6 @@
 import React from 'react'
 
-<<<<<<< HEAD
-function Menu() {
-    return (
-        <div>
-            MENU JS kaka
-        </div>
-    )
-}
-
-export default Menu
-=======
-import Container from '../components/container';
+import Container from './container';
 import styles from '../styles/Menu.module.css'
 
 const menu = {
@@ -70,7 +59,6 @@ const menu = {
 
 
 function Menu() {
-    console.log(menu)
     return (
        <Container>
            <div className={styles.titleContainer}>
@@ -82,4 +70,3 @@ function Menu() {
 }
 
 export default Menu;
->>>>>>> 7994ab3fa1bd05cfc51b57058c63d39f03966ed8
