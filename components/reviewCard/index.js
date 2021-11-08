@@ -3,7 +3,7 @@ import React from 'react'
 // styles
 import styles from "./ReviewCard.module.css"
 
-import { motion } from "framer-motion"
+// import { motion } from "framer-motion"
 
 function ReviewCard(props) {
     // props.startAnimation

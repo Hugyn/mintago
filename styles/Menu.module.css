@@ -1,0 +1,33 @@
+.titleContainer{
+ text-align: center;
+}   
+
+
+.title{
+    font-size: 62px;
+    line-height: 0.8em;
+    margin-bottom: 0px;
+    color: var(--charcoal);
+}
+
+.title::before{
+    content: "";
+    display: block;
+    width: 120%;
+    height: 5px;
+    background-color: var(--primarySalmon);
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+    z-index: -1;
+}
+
+.knowMore{
+    margin: 0;
+    padding: 4px 10px;
+    margin-top: 10px;
+    background-color: var(--primarySalmon);
+    display: inline-block;
+    font-size: 18px;
+}
+

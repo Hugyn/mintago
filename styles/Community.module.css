@@ -17,7 +17,7 @@
 
 .title .knowMore{
     margin: 0;
-    padding: 4px 8px;
+    padding: 4px 10px;
     margin-top: 10px;
     background-color: var(--primarySalmon);
     display: inline-block;
@@ -28,7 +28,7 @@
     position: relative;
 }
 
-.community::after{
+.community::before{
     content: "";
     display: block;
     width: 120%;

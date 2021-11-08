@@ -1,1 +1,0 @@
-https://egghead.io/lessons/javascript-mock-an-api-for-local-development-in-react-with-mirage-js
