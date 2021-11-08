@@ -11,6 +11,7 @@ import { InView } from 'react-intersection-observer';
 import Home from './Home';
 import Community from './Community';
 import Location from './Location';
+import Menu from './Menu';
 
 
 
@@ -19,7 +20,7 @@ function MyApp() {
   const [pageIndex ,setPageIndex] = useState(null);
   const [isInView, setIsInView] = useState(false);
 
-  const _components = [<Home/>, <Community isInView={isInView}/>, <Location />] 
+  const _components = [<Home/>, <Community isInView={isInView}/>, <Location />, <Menu/>] 
   
   return (
     <Layout  pageIndex={pageIndex}>
