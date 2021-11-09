@@ -1,4 +1,4 @@
-import React, {Fragment, Profiler, useState} from 'react'
+import React, {Fragment, useState} from 'react'
 
 import { InView } from 'react-intersection-observer';
 
@@ -24,7 +24,6 @@ function index(props) {
     return (
         <Fragment>
             <SideNavigation sectionCount={_components.length} pageIndex={pageIndex}/>
-            <Home key="home"/>
                 {_components.map((Component, _i)=> {
                     return(
                       <InView key={_i} threshold={0.75}>
