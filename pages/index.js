@@ -15,10 +15,10 @@ function Index(props) {
 
     const _components = 
     [
-    <Home/>,
-    <Community reviewsData={props.reviews} isInView={isInView}/>,
+    <Home key="home"/>,
+    <Community key="community" reviewsData={props.reviews} isInView={isInView}/>,
     // <Location />,
-    <Menu/>
+    <Menu key="menu"/>
     ];
     
     return (
@@ -29,10 +29,10 @@ function Index(props) {
                       <InView key={_i} threshold={0.75}>
                         {({inView, ref, entry})=> {
                           ///Community section animation
-                          // inView && Component.type.name == "Community" ? setIsInView(true) : null
-                          // inView && setPageIndex(_i++)
+                          inView && Component.type.name == "Community" ? setIsInView(true) : null
+                          inView && setPageIndex(_i++)
                           return(
-                            <section key={Component.type.name.toLowerCase()} id={Component.type.name.toLowerCase()}  ref={ref}>
+                            <section key={_i} id={Component.type.name.toLowerCase()}  ref={ref}>
                               {Component}
                             </section>
                           )
