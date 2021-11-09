@@ -79,9 +79,9 @@ function Menu() {
                                 <div key={_i} id={item} className={styles.menuSection}>
                                      <Parallax y={paralax[_i]}>
                                          <h1 className={styles.menuSectionTitle}>{item.replace("_", " ")}</h1>
-                                         {Object.keys(menu[item]).map((meal)=> {
+                                         {Object.keys(menu[item]).map((meal, _i)=> {
                                              return(
-                                                  <div className={styles.menuItem}>
+                                                  <div key={_i} className={styles.menuItem}>
                                                       <h3 className={styles.mealName}>{meal.replace("_", " ")}</h3>
                                                       <p className={styles.mealDescription}>{menu[item][meal].description}</p>
                                                       <span className={styles.mealPrice}>{menu[item][meal].price}</span>

@@ -29,8 +29,8 @@ function Index(props) {
                       <InView key={_i} threshold={0.75}>
                         {({inView, ref, entry})=> {
                           ///Community section animation
-                          inView && Component.type.name == "Community" ? setIsInView(true) : null
-                          inView && setPageIndex(_i++)
+                          // inView && Component.type.name == "Community" ? setIsInView(true) : null
+                          // inView && setPageIndex(_i++)
                           return(
                             <section id={Component.type.name.toLowerCase()}  ref={ref}>
                               {Component}
