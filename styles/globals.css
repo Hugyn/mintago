@@ -57,3 +57,21 @@ a {
 #community{
   background-color: white;
 }
+
+label{
+  display: block;
+}
+
+input{
+  margin:  15px 0px;
+  width: 250px;
+  border: none;
+  border-bottom:1px solid var(--charcoal) ;
+  background-color:transparent;
+  padding: 7px 0px;
+}
+
+input::placeholder{
+  color: #767676;
+  text-transform: capitalize;
+}
