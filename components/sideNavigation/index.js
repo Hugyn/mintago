@@ -8,11 +8,13 @@ import styles from "./SideNavigation.module.css"
 
 
 function SideNavigation(props) {
+    
     const sideNavRef = useRef()
     const currentSection = props.pageIndex; 
-    const sectionCount = props.sectionCount
+    const sectionCount = props.sectionCount;
     const currentSectionZero = currentSection-1;
-  
+    
+   
 
 
     return(

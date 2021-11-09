@@ -7,8 +7,6 @@ import styles from "./ReviewCard.module.css"
 
 function ReviewCard(props) {
     // props.startAnimation
-
-      
     return (
         <div  key={props.key} id={props.id} className={`${styles.reviewCardContainer} ${props.className}`}>
             <div className={styles.cardImageContainer}>
