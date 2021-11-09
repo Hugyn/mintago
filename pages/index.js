@@ -24,7 +24,8 @@ function index(props) {
     return (
         <Fragment>
             <SideNavigation sectionCount={_components.length} pageIndex={pageIndex}/>
-                {/* {_components.map((Component, _i)=> {
+            <Home key="home"/>
+                {_components.map((Component, _i)=> {
                     return(
                       <InView key={_i} threshold={0.75}>
                         {({inView, ref, entry})=> {
@@ -39,7 +40,7 @@ function index(props) {
                         }}
                       </InView>
                     )
-                })} */}
+                })}
         </Fragment>
     )
 }
