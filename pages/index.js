@@ -9,7 +9,7 @@ import Location from '../components/Location';
 import Menu from '../components/Menu';
 import SideNavigation from '../components/sideNavigation';
 
-function Index(props) {
+function index(props) {
     const [pageIndex ,setPageIndex] = useState(null);
     const [isInView, setIsInView] = useState(false);
 
@@ -54,4 +54,4 @@ export async function getServerSideProps(){
     }
   }
 } 
-export default Index;
+export default index;

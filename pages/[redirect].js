@@ -1,10 +1,10 @@
 import React from 'react'
-import Index from './index'
+import index from './index'
 
 function redirect(props) {
     console.log(props)
     return (
-        <Index/>
+        <index/>
     )
 }
 
