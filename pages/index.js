@@ -32,7 +32,7 @@ function Index(props) {
                           // inView && Component.type.name == "Community" ? setIsInView(true) : null
                           // inView && setPageIndex(_i++)
                           return(
-                            <section id={Component.type.name.toLowerCase()}  ref={ref}>
+                            <section key={Component.type.name.toLowerCase()} id={Component.type.name.toLowerCase()}  ref={ref}>
                               {Component}
                             </section>
                           )

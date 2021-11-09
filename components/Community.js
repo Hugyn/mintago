@@ -16,7 +16,7 @@ export default function Community(props) {
 
     useEffect(()=> {
        setReviews(()=> props.reviewsData)
-    },[])
+    },[props.reviewsData])
 
     
     const myVariant = {
