@@ -10,10 +10,10 @@ import Home from './Home';
 import Community from './Community';
 import Location from './Location';
 import Menu from './Menu';
-
+import SideNavigation from './SideNavigation';
 
 function Layout({children, pageIndex}) {
- 
+  
 
     return (
         <Fragment>
@@ -21,6 +21,7 @@ function Layout({children, pageIndex}) {
               <title>THE BEST FOODIE EXPERIENCE</title>
               <meta name="description" content="THE BEST FOODIE EXPERIENCE NOW IN LONDON"/>
             </Head>
+            <SideNavigation />
             <Navbar/>
              {children}
             <Footer/>

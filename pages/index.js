@@ -9,32 +9,29 @@ import Location from '../components/Location';
 import Menu from '../components/Menu';
 import SideNavigation from '../components/sideNavigation';
 
-function index(props) {
-    // const [pageIndex ,setPageIndex] = useState(null);
-    // const [isInView, setIsInView] = useState(false);
 
-    // const _components = 
-    // [
-    // <Home key="home"/>,
-    // <Community key="community" reviewsData={props.reviews} isInView={isInView}/>,
-    // <Location />,
-    // <Menu key="menu"/>
-    // ];
-        
-    // const ComponentTracker = (props) => {
-    //   const { ref, entry } = useInView({ trackVisibility: true, delay: 100 });
-    //   console.log(props.component)
-    //   return (
-    //       <section ref={ref}>
-    //           {props.component}
-    //       </section>
-    //   )
-    // };
+
+ const ComponentTracker = (props) => {
+      // const _components = 
+      // [
+      //     <Home key="home"/>,
+      //     <Community key="community"/>,
+      //     <Location />,
+      //     <Menu key="menu"/>
+      // ];
+      const { ref, entry } = useInView({ trackVisibility: true, delay: 100 });
+      return (
+          <section ref={ref}>
+              {props.component}
+          </section>
+      )
+  };
  
+
+function index(props) {
     return (
         <Fragment>
-          {/* <ComponentTracker component={<Home/>}/> */}
-          <Home/>
+          <ComponentTracker component={<Home/>}/>
         </Fragment>
     )
 }

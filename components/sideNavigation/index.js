@@ -4,21 +4,20 @@ import styled from 'styled-components'
 import styles from "./SideNavigation.module.css"
 
 
+import { InView } from 'react-intersection-observer';
 
 
 
 function SideNavigation(props) {
-    
-    const sideNavRef = useRef()
     const currentSection = props.pageIndex; 
     const sectionCount = props.sectionCount;
     const currentSectionZero = currentSection-1;
     
    
-
+    
 
     return(
-        <div ref={sideNavRef} className={styles.sideNavigationContainer}>
+        <div className={styles.sideNavigationContainer}>
             <span 
             style={{top:`${30*currentSectionZero}px`}} 
             className={styles.pageIndexNumber}>
