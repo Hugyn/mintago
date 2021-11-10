@@ -59,10 +59,6 @@ const menu = {
 }
 
 function Menu(props) {
-    const { ref, inView, entry } = useInView({
-        /* Optional options */
-        threshold: 0.65,
-      });
 
     const [paralax, setParallax] = useState("")
     useEffect(() => {
@@ -72,7 +68,7 @@ function Menu(props) {
     
     return (
        <Container>
-           <div ref={ref} className={styles.menu}>
+           <div className={styles.menu}>
                 <div className={styles.titleContainer}>
                     <h1 className={styles.title}>OUR MENU</h1>
                     <p className={styles.knowMore}>KNOW MORE</p>
