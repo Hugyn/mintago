@@ -20,7 +20,8 @@ function index(props) {
     // <Location />,
     <Menu key="menu"/>
     ];
-    
+    // inView && Component.type.name == "Community" ? setIsInView(true) : null
+                          // inView && setPageIndex(_i++)
     return (
         <Fragment>
             <SideNavigation sectionCount={_components.length} pageIndex={pageIndex}/>
@@ -29,7 +30,6 @@ function index(props) {
                       <InView key={_i} threshold={0.75}>
                         {({inView, ref, entry})=> {
                           ///Community section animation
-                          
                           return(
                             <section key={_i} id={Component.type.name.toLowerCase()}  ref={ref}>
                               {Component}
