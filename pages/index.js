@@ -7,7 +7,7 @@ import Menu from '../components/Menu'
 import ComponentTracker from '../components/ComponentTracker'
 
 function index(props) {
-  const _components = [<Home/>, <Menu/>]
+  const _components = [<Home/>, <Menu/>, <Community/>]
     return (
         <Fragment>
           {_components.map((component, _i)=> (
