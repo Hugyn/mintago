@@ -2,16 +2,21 @@ import React, { Fragment } from 'react'
 
 import Home from '../components/Home'
 import Community from '../components/Community'
+import Menu from '../components/Menu'
 
 import ComponentTracker from '../components/ComponentTracker'
 
 function index(props) {
+  const _components = [<Home/>, <Menu/>]
     return (
         <Fragment>
-          <ComponentTracker>
-            <Home/>
-            <Community/>
-          </ComponentTracker>
+          {_components.map((component, _i)=> (
+            <ComponentTracker key={_i}>
+              {component}
+            </ComponentTracker>
+            )
+          )}
+          
         </Fragment>
     )
 }
