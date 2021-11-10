@@ -10,7 +10,7 @@ import Home from './Home';
 import Community from './Community';
 import Location from './Location';
 import Menu from './Menu';
-import SideNavigation from './SideNavigation';
+import SideNavigation from './sideNavigation';
 
 function Layout({children, pageIndex}) {
   
