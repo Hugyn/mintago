@@ -6,7 +6,7 @@ function ComponentTracker({children}) {
   
     const { ref, entry } = useInView({ trackVisibility: true, delay: 100 });
     return (
-        <section key={props.keyRef} ref={ref}>
+        <section  ref={ref}>
             {children}
         </section>
     )

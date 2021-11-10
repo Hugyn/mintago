@@ -7,11 +7,11 @@ import Menu from '../components/Menu'
 import ComponentTracker from '../components/ComponentTracker'
 
 function index(props) {
-  const _components = [<Home/>, <Menu/>, <Community/>]
+  const _components = [<Home key="home"/>, <Menu key="menu"/>, <Community key="community"/>]
     return (
         <Fragment>
           {_components.map((component, _i)=> (
-            <ComponentTracker keyRef={_i}>
+            <ComponentTracker key={_i}>
               {component}
             </ComponentTracker>
             )
