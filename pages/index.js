@@ -9,36 +9,37 @@ import Location from '../components/Location';
 import Menu from '../components/Menu';
 import SideNavigation from '../components/sideNavigation';
 
-function Index(props) {
-    const [pageIndex ,setPageIndex] = useState(null);
-    const [isInView, setIsInView] = useState(false);
+function index(props) {
+    // const [pageIndex ,setPageIndex] = useState(null);
+    // const [isInView, setIsInView] = useState(false);
 
-    const _components = 
-    [
-    <Home key="home"/>,
-    <Community key="community" reviewsData={props.reviews} isInView={isInView}/>,
-    <Location />,
-    <Menu key="menu"/>
-    ];
+    // const _components = 
+    // [
+    // <Home key="home"/>,
+    // <Community key="community" reviewsData={props.reviews} isInView={isInView}/>,
+    // <Location />,
+    // <Menu key="menu"/>
+    // ];
         
-    const ComponentTracker = (props) => {
-      const { ref, entry } = useInView({ trackVisibility: true, delay: 100 });
-      console.log(props.component)
-      return (
-          <section ref={ref}>
-              {props.component}
-          </section>
-      )
-    };
+    // const ComponentTracker = (props) => {
+    //   const { ref, entry } = useInView({ trackVisibility: true, delay: 100 });
+    //   console.log(props.component)
+    //   return (
+    //       <section ref={ref}>
+    //           {props.component}
+    //       </section>
+    //   )
+    // };
  
     return (
         <Fragment>
-          <ComponentTracker component={<Home/>}/>
+          {/* <ComponentTracker component={<Home/>}/> */}
+          <Home/>
         </Fragment>
     )
 }
 
-export default Index;
+export default index;
 // export async function getServerSideProps(){
 //   const response = await fetch("http://localhost:3000/api/reviews");
 //   const reviewsData = await response.json();
