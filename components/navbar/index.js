@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 
 function Navbar() {
     const router = useRouter()
-    const navLinks = ["about", "community", "location", "our menu", "recipes"]
+    const navLinks = ["about", "community", "location", "our menu", "recipeeeeees"]
     
     function test(){
         router.push('/?step=2', null, { shallow: true })
