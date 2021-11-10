@@ -1,22 +1,29 @@
 import React, { Fragment } from 'react'
+import { InView } from 'react-intersection-observer';
 
 import Home from '../components/Home'
 import Community from '../components/Community'
 import Menu from '../components/Menu'
 
-import ComponentTracker from '../components/ComponentTracker'
 
 function index(props) {
-  const _components = [<Home key="home"/>, <Menu key="menu"/>, <Community key="community"/>]
+  const _components = [<Home/>, <Community />, <Menu />]
     return (
         <Fragment>
-          {_components.map((component, _i)=> (
-            <ComponentTracker key={_i}>
-              {component}
-            </ComponentTracker>
-            )
-          )}
+          <InView>
+            {({inView, ref, entry})=> {
+              return (
+                _components.map((component, _i)=> {
+                  return(
+                   <section ref={ref} key={_i}>
+                     {component}
+                   </section> 
+                  )
+                })
+              )
+            }}
           
+          </InView>
         </Fragment>
     )
 }
