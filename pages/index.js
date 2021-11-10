@@ -7,7 +7,7 @@ import Menu from '../components/Menu'
 
 
 function index(props) {
-  const _components = [<Home/>, <Community />, <Menu />]
+  const _components = [<Home key="home"/>, <Community key="community"/>, <Menu key="menu"/>]
     return (
         <Fragment>
           <InView>
