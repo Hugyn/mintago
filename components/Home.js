@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+ function Home(props) {
   return (
-    <div className={styles.home}>
+    <div ref={props.innerRef} className={styles.home}>
         <div className={styles.logoStamp}>
           <Image src='/stamp.svg' width={186} height={186}/>
         </div>
@@ -14,3 +14,4 @@ export default function Home() {
     </div>
   )
 }
+export default Home;

@@ -1,6 +1,6 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useState, useRef, useCallback} from 'react'
 
-import { InView } from 'react-intersection-observer';
+import { useInView } from 'react-intersection-observer';
 
 //Pages Component
 import Home from '../components/Home';
@@ -17,28 +17,23 @@ function index(props) {
     [
     <Home key="home"/>,
     <Community key="community" reviewsData={props.reviews} isInView={isInView}/>,
-    // <Location />,
+    <Location />,
     <Menu key="menu"/>
     ];
-    // inView && Component.type.name == "Community" ? setIsInView(true) : null
-                          // inView && setPageIndex(_i++)
+        
+    const ComponentTracker = (props) => {
+      const { ref, entry } = useInView({ trackVisibility: true, delay: 100 });
+      console.log(props.component)
+      return (
+          <section ref={ref}>
+              {props.component}
+          </section>
+      )
+    };
+ 
     return (
         <Fragment>
-            <SideNavigation sectionCount={_components.length} pageIndex={pageIndex}/>
-                {_components.map((Component, _i)=> {
-                    return(
-                      <InView key={_i} threshold={0.75}>
-                        {({inView, ref, entry})=> {
-                          ///Community section animation
-                          return(
-                            <section key={_i} id={Component.type.name.toLowerCase()}  ref={ref}>
-                              {Component}
-                            </section>
-                          )
-                        }}
-                      </InView>
-                    )
-                })}
+          <ComponentTracker component={<Home/>}/>
         </Fragment>
     )
 }

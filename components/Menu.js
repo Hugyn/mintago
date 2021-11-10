@@ -58,7 +58,7 @@ const menu = {
     }
 }
 
-function Menu() {
+function Menu(props) {
     const [paralax, setParallax] = useState("")
     useEffect(() => {
        setParallax([[100, -60], [-60, 100], [100, -60],[-60, 100]]);
@@ -67,7 +67,7 @@ function Menu() {
     
     return (
        <Container>
-           <div className={styles.menu}>
+           <div ref={props.innverRef} className={styles.menu}>
                 <div className={styles.titleContainer}>
                     <h1 className={styles.title}>OUR MENU</h1>
                     <p className={styles.knowMore}>KNOW MORE</p>
