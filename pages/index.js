@@ -1,32 +1,7 @@
-import React, {Fragment, useState, useRef, useCallback} from 'react'
-
-import { useInView } from 'react-intersection-observer';
-
-//Pages Component
-import Home from '../components/Home';
-import Community from '../components/Community';
-import Location from '../components/Location';
-import Menu from '../components/Menu';
-import SideNavigation from '../components/sideNavigation';
+import React, { Fragment } from 'react'
 
 
-
- const ComponentTracker = (props) => {
-      // const _components = 
-      // [
-      //     <Home key="home"/>,
-      //     <Community key="community"/>,
-      //     <Location />,
-      //     <Menu key="menu"/>
-      // ];
-      const { ref, entry } = useInView({ trackVisibility: true, delay: 100 });
-      return (
-          <section ref={ref}>
-              {props.component}
-          </section>
-      )
-  };
- 
+import ComponentTracker from '../components/ComponentTracker'
 
 function index(props) {
     return (
