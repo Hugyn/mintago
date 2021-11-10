@@ -2,12 +2,14 @@ import React, {Fragment, useState, useRef, useCallback} from 'react'
 
 import { useInView } from 'react-intersection-observer';
  
- const ComponentTracker = (props) => {
+function ComponentTracker({children}) {
   
     const { ref, entry } = useInView({ trackVisibility: true, delay: 100 });
     return (
         <section ref={ref}>
-            {props.component}
+            {children}
         </section>
     )
 };
+
+export default ComponentTracker;
