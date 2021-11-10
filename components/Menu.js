@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 
 import { ParallaxProvider, Parallax} from 'react-scroll-parallax';
 
-
+import { useInView } from 'react-intersection-observer';
 import Container from './container';
 import styles from '../styles/Menu.module.css'
 
@@ -59,6 +59,11 @@ const menu = {
 }
 
 function Menu(props) {
+    const { ref, inView, entry } = useInView({
+        /* Optional options */
+        threshold: 0.65,
+      });
+
     const [paralax, setParallax] = useState("")
     useEffect(() => {
        setParallax([[100, -60], [-60, 100], [100, -60],[-60, 100]]);
@@ -67,7 +72,7 @@ function Menu(props) {
     
     return (
        <Container>
-           <div ref={props.innverRef} className={styles.menu}>
+           <div ref={ref} className={styles.menu}>
                 <div className={styles.titleContainer}>
                     <h1 className={styles.title}>OUR MENU</h1>
                     <p className={styles.knowMore}>KNOW MORE</p>

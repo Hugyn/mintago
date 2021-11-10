@@ -1,11 +1,16 @@
 import React from 'react'
 import Container from './container';
+import { useInView } from 'react-intersection-observer';
 
 import styles from "../styles/Footer.module.css"
 
 function Footer() {
+    const { ref, inView, entry } = useInView({
+        /* Optional options */
+        threshold: 0.65,
+      });
     return (
-        <div className={styles.backgroundSalmon}>
+        <div ref={ref} className={styles.backgroundSalmon}>
             <Container>
                     <div className={styles.topFooter}>
                         <div>

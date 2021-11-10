@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import { InView } from 'react-intersection-observer';
 
 import Home from '../components/Home'
 import Community from '../components/Community'
@@ -9,22 +8,8 @@ import Menu from '../components/Menu'
 function index(props) {
   const _components = [<Home key="home"/>, <Community key="community"/>, <Menu key="menu"/>]
     return (
-        <Fragment>
-          <InView>
-            {({inView, ref, entry})=> {
-              return (
-                _components.map((component, _i)=> {
-                  return(
-                   <section ref={ref} key={_i}>
-                     {component}
-                   </section> 
-                  )
-                })
-              )
-            }}
-          
-          </InView>
-        </Fragment>
+        
+        <Home/>
     )
 }
 

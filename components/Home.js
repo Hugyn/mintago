@@ -1,9 +1,15 @@
 import Image from 'next/image'
 import styles from '../styles/Home.module.css';
 
+import { useInView } from 'react-intersection-observer';
+
  function Home(props) {
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0.65,
+  });
   return (
-    <div ref={props.innerRef} className={styles.home}>
+    <div ref={ref} className={styles.home}>
         <div className={styles.logoStamp}>
           <Image src='/stamp.svg' width={186} height={186}/>
         </div>
