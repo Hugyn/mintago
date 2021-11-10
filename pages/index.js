@@ -11,7 +11,7 @@ function index(props) {
     return (
         <Fragment>
           {_components.map((component, _i)=> (
-            <ComponentTracker key={_i}>
+            <ComponentTracker keyRef={_i}>
               {component}
             </ComponentTracker>
             )
