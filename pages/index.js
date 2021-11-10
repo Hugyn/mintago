@@ -9,7 +9,7 @@ import Location from '../components/Location';
 import Menu from '../components/Menu';
 import SideNavigation from '../components/sideNavigation';
 
-function index(props) {
+function Index(props) {
     const [pageIndex ,setPageIndex] = useState(null);
     const [isInView, setIsInView] = useState(false);
 
@@ -38,7 +38,7 @@ function index(props) {
     )
 }
 
-export default index;
+export default Index;
 // export async function getServerSideProps(){
 //   const response = await fetch("http://localhost:3000/api/reviews");
 //   const reviewsData = await response.json();
