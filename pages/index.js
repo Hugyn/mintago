@@ -38,14 +38,13 @@ function index(props) {
     )
 }
 
-
-export async function getServerSideProps(){
-  const response = await fetch("http://localhost:3000/api/reviews");
-  const reviewsData = await response.json();
-  return {
-    props: {
-      reviews:reviewsData.default
-    }
-  }
-} 
 export default index;
+// export async function getServerSideProps(){
+//   const response = await fetch("http://localhost:3000/api/reviews");
+//   const reviewsData = await response.json();
+//   return {
+//     props: {
+//       reviews:reviewsData.default
+//     }
+//   }
+// } 
