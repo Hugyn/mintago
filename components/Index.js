@@ -11,14 +11,14 @@ import { useInView, InView } from 'react-intersection-observer';
 function Index(props) {
     const [state, setState] = useState(null)
     const [animation, setAnimation] = useState(false)
-    const _components = [<Home key="home"/>, <Community reviewsData={props.communityReviews} animate={true} key="community"/>, <Menu key="menu"/>]
+    const _components = [<Home key="home"/>, <Community reviewsData={props.communityReviews} animate={state == 1 ? true : false} key="community"/>, <Menu key="menu"/>]
   
       return (
         <Fragment>
         <SideNavigation sectionCount={_components.length} pageIndex={state+1}/>
         {_components.map((component, _i)=> {
           return(
-            <InView onChange={(inView, entry)=> inView && setState(_i)} key={_i} id={_i}>
+            <InView threshold={0.55} onChange={(inView, entry)=> inView && setState(_i)} key={_i} id={_i}>
               {component}
             </InView>
           )
