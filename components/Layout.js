@@ -13,7 +13,7 @@ import Menu from './Menu';
 import SideNavigation from './sideNavigation';
 
 function Layout({children, pageIndex}) {
-  
+  console.log(children);
 
     return (
         <Fragment>
@@ -21,7 +21,6 @@ function Layout({children, pageIndex}) {
               <title>THE BEST FOODIE EXPERIENCE</title>
               <meta name="description" content="THE BEST FOODIE EXPERIENCE NOW IN LONDON"/>
             </Head>
-            <SideNavigation />
             <Navbar/>
              {children}
             <Footer/>

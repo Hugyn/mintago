@@ -8,6 +8,7 @@
     letter-spacing:1px;
     font-family: "DIN Condensed";
     color: var(--charcoal);
+    z-index: 9999;
 }
 
 .leftMenu{

@@ -40,7 +40,7 @@
 /* Menu */
 .menuContainer{
     display: flex;
-    height: 100vh;
+    height: 120vh;
 }
 
 .menuSection{
@@ -79,6 +79,6 @@
 }
 
 .menu{
-    height: 100vh;
+    height: 120vh;
     overflow: hidden;
 }

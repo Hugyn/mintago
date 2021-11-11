@@ -31,7 +31,7 @@ export default function Community(props) {
     }
     
     // Start animation when component is in viewport
-    props.isInView && control.start({
+    props.animate && control.start({
         y:0,
         opacity: 1
     })

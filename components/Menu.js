@@ -62,7 +62,7 @@ function Menu(props) {
 
     const [paralax, setParallax] = useState("")
     useEffect(() => {
-       setParallax([[100, -60], [-60, 100], [100, -60],[-60, 100]]);
+       setParallax([[90, -60], [-60, 90], [90, -60],[-60, 60]]);
     }, [])
 
     

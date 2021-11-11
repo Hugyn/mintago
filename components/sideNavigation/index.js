@@ -1,21 +1,12 @@
 import React,{useEffect, useRef, useState} from 'react'
-import styled from 'styled-components'
 //styles
 import styles from "./SideNavigation.module.css"
-
-
-import { InView } from 'react-intersection-observer';
-
-
 
 function SideNavigation(props) {
     const currentSection = props.pageIndex; 
     const sectionCount = props.sectionCount;
     const currentSectionZero = currentSection-1;
-    
    
-    
-
     return(
         <div className={styles.sideNavigationContainer}>
             <span 
