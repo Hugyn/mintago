@@ -20,6 +20,8 @@ function Layout({children, pageIndex}) {
             <Head>
               <title>THE BEST FOODIE EXPERIENCE</title>
               <meta name="description" content="THE BEST FOODIE EXPERIENCE NOW IN LONDON"/>
+              <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+              <link rel="icon" type="image/png" href="/favicon.png"/>
             </Head>
             <Navbar/>
              {children}
