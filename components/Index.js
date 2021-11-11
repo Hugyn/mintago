@@ -9,7 +9,6 @@ import { useInView, InView } from 'react-intersection-observer';
 
 
 function Index(props) {
-    console.log(props.communityReviews)
     const [state, setState] = useState(null)
     const [animation, setAnimation] = useState(false)
     const _components = [<Home key="home"/>, <Community reviewsData={props.communityReviews} animate={true} key="community"/>, <Menu key="menu"/>]
