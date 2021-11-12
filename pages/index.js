@@ -5,7 +5,7 @@ import Community from '../components/Community'
 import Menu from '../components/Menu'
 import SideNavigation from '../components/sideNavigation'
 import { useInView, InView } from 'react-intersection-observer';
-import Index from '../components/Index'
+// import Index from '../components/Index'
 
 
 
