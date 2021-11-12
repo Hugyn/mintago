@@ -27,7 +27,8 @@ function Index(props) {
       //   )
       // })}
       // </Fragment>
-      <Index communityReviews={props.reviews}/>
+      // <Index communityReviews={props.reviews}/>
+      <div>test</div>
     )
 }
 
