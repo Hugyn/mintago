@@ -9,7 +9,7 @@ import Index from '../components/Index'
 
 
 
-function index(props) {
+function Index(props) {
   // console.log(props.reviews)
  
   const [state, setState] = useState(null)
@@ -31,7 +31,7 @@ function index(props) {
     )
 }
 
-export default index;
+export default Index;
 
 export async function getServerSideProps({req}){
   const { origin } = absoluteUrl(req, "localhost:3000")
