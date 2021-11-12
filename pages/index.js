@@ -5,11 +5,11 @@ import Community from '../components/Community'
 import Menu from '../components/Menu'
 import SideNavigation from '../components/sideNavigation'
 import { useInView, InView } from 'react-intersection-observer';
-// import Index from '../components/Index'
+import Index from '../components/Index'
 
 
 
-function Index(props) {
+function index(props) {
   // console.log(props.reviews)
  
   const [state, setState] = useState(null)
@@ -27,12 +27,11 @@ function Index(props) {
       //   )
       // })}
       // </Fragment>
-      // <Index communityReviews={props.reviews}/>
-      <div>test</div>
+      <Index communityReviews={props.reviews}/>
     )
 }
 
-export default Index;
+export default index;
 
 export async function getServerSideProps({req}){
   const { origin } = absoluteUrl(req, "localhost:3000")
