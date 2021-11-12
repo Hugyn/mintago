@@ -12,7 +12,7 @@ import Index from '../components/Index'
 function index(props) {
   // console.log(props.reviews)
  
-  // const [state, setState] = useState(null)
+  const [state, setState] = useState(null)
   // const [animation, setAnimation] = useState(false)
   
 
