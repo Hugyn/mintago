@@ -8,7 +8,7 @@ import styles from '../styles/Home.module.css';
   return (
     <div className={styles.home}>
         <div className={styles.logoStamp}>
-          <Image src='/stamp.svg' width={186} height={186}/>
+          <Image src='/stamp.svg' width={186} height={186} alt="Stamp Logo"/>
         </div>
         <div className={styles.homeHero}>
           <h1>The best foodie<br/><span>experience</span></h1>
