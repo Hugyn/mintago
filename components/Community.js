@@ -10,7 +10,6 @@ import ReviewCard from './reviewCard';
 
 export default function Community(props) {
     const [reviews, setReviews] = useState(null);
-    const [loading, setLoading] = useState(true);
     const control = useAnimation();
 
 
@@ -49,7 +48,7 @@ export default function Community(props) {
 
                 <div className={styles.reviewsContainer}>
                    
-                    {
+                    { 
                         reviews && reviews.map((review, i)=> (
                             <motion.div className={styles.reviewCard}
                                 key={review.id}
@@ -66,8 +65,8 @@ export default function Community(props) {
                                     cardContent={review.content}
                                     commentsCount={review.commentsCount}
                                     likesCount={parseInt(review.likesCount)}
-                                    detailCrosses="large"
-                                    detailStripes="true"
+                                    detailCrosses={i == 0 ? "large" : i == 1 ? "small" : null}
+                                    detailStripes={i == 0 ? "true" : null}
                                 />
                             </motion.div>
                         ))
@@ -79,13 +78,3 @@ export default function Community(props) {
     )
 }
 
-export async function getServerSideProps(context) {
-    // const response = await fetch("http://localhost:3000/api/reviews")
-    // const data = await response.json()
-    
-    return {
-        props:{
-            "data":"data"
-    }
-}
-}

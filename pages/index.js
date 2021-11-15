@@ -1,37 +1,43 @@
-import React, { Fragment,useState, useEffect } from 'react'
+import React, { Fragment,useState } from 'react'
 import absoluteUrl from 'next-absolute-url'
+import { InView } from 'react-intersection-observer';
+
+//Components
 import Home from '../components/Home'
 import Community from '../components/Community'
 import Menu from '../components/Menu'
 import SideNavigation from '../components/sideNavigation'
-import { useInView, InView } from 'react-intersection-observer';
-import Index from '../components/Index'
+import Footer from '../components/Footer';
 
 
 
-function index(props) {
+
+function Index(props) {
   // console.log(props.reviews)
- 
-  // const [state, setState] = useState(null)
-  // const [animation, setAnimation] = useState(false)
+  const [state, setState] = useState(null);
   
+  const _components = [
+  <Home key="home"/>, 
+  <Community reviewsData={props.reviews} animate={state == 1 ? true : false} key="community"/>,
+  <Menu key="menu"/>,
+  <Footer key="footer"/>
+  ]
+
 
     return (
-      // <Fragment>
-      // <SideNavigation sectionCount={_components.length} pageIndex={state+1}/>
-      // {_components.map((component, _i)=> {
-      //   return(
-      //     <InView onChange={(inView, entry)=> inView && setState(_i)} key={_i} id={_i}>
-      //       {component}
-      //     </InView>
-      //   )
-      // })}
-      // </Fragment>
-      <Index communityReviews={props.reviews}/>
+      <Fragment>
+        <SideNavigation sectionCount={_components.length} pageIndex={state+1}/>
+        
+        {_components.map((component, _i)=> (
+          <InView threshold={0.55} onChange={(inView, entry)=> inView && setState(_i)} key={_i} id={component.key}>
+            {component}
+          </InView>
+        ))}
+      </Fragment>
     )
 }
 
-export default index;
+export default Index;
 
 export async function getServerSideProps({req}){
   const { origin } = absoluteUrl(req, "localhost:3000")
@@ -41,7 +47,7 @@ export async function getServerSideProps({req}){
   const reviewsData = await response.json();
   return {
     props: {
-      reviews:reviewsData.default
+      reviews:reviewsData.default,
     }
   }
 } 
