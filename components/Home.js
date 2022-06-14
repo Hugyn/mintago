@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css';
 
 
  function Home(props) {
-
+  console.log("TEEEEEEEEEEESt")
   return (
     <div className={styles.home}>
         <div className={styles.logoStamp}>
